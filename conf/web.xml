@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
+       version="2.4">
+
+  <display-name>appCentralAtendimentoReenge</display-name>  
+
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>appCentralAtendimentoReenge</web-resource-name>
+        <url-pattern>/cadastroEmails/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>appCentralAtendimentoReenge</realm-name>
+  </login-config>
+  
+  <servlet>
+    <servlet-name>FormularioSalaServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioSalaEnvioServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioSalaServlet</servlet-name>
+    <url-pattern>/solicitacaoSala</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>FormularioLaboratorioServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioLaboratorioEnvioServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioLaboratorioServlet</servlet-name>
+    <url-pattern>/solicitacaoLaboratorio</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>FormularioServicoServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioServicoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioServicoServlet</servlet-name>
+    <url-pattern>/solicitacaoServico</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>FormularioOutroServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioOutroServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioOutroServlet</servlet-name>
+    <url-pattern>/solicitacaoOutro</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>FormularioSugestaoServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioSugestaoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioSugestaoServlet</servlet-name>
+    <url-pattern>/sugestao</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>FormularioReclamacaoServlet</servlet-name>
+    <servlet-class>formulario.controller.FormularioReclamacaoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FormularioReclamacaoServlet</servlet-name>
+    <url-pattern>/reclamacao</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CadastroEmailsServlet</servlet-name>
+    <servlet-class>cadastroEmail.controller.CadastroEmailsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CadastroEmailsServlet</servlet-name>
+    <url-pattern>/cadastroEmails/cadastroEmail</url-pattern>
+  </servlet-mapping>
+  
+  <taglib>
+    <taglib-uri>/tags/core</taglib-uri>
+    <taglib-location>/WEB-INF/c.tld</taglib-location>
+  </taglib>
+</web-app>

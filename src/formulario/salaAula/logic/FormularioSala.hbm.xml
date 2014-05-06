@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping schema="cardb" package="formulario.salaAula.logic">
+  <class name="FormularioSala" table="formularioSala" schema="cardb" optimistic-lock="none">
+  <id name="codigoSoAula" type="java.lang.Long" unsaved-value="null" column="codigoSoAula">
+      <generator class="native"/>
+    </id>
+    <property name="equipamentosFrequentes" type="java.lang.String" column="equipamentosFrequentes"/>
+    <property name="equipamentosIndispensaveis" type="java.lang.String" column="equipamentosIndispensaveis"/>
+    <property name="equipamentosNaoDisponiveis" type="java.lang.String" column="equipamentosNaoDisponiveis"/>
+    <property name="equipamentosNaoUtilizados" type="java.lang.String" column="equipamentosNaoUtilizados"/>
+    <property name="disciplinaPodeSerNoturno" type="java.lang.String" column="disciplinaPodeSerNoturno"/>
+    <property name="justificativaNoturna" type="java.lang.String" column="justificativaNoturna"/>
+    <property name="disciplinaPodeSerNoSabado" type="java.lang.String" column="disciplinaPodeSerNoSabado"/>
+    <property name="turnoParaSerSabado" type="java.lang.String" column="turnoParaSerSabado"/>
+    <property name="justificativaSabado" type="java.lang.String" column="justificativaSabado"/>
+    <property name="contribuicao" type="java.lang.String" column="contribuicao"/>
+    <property name="dataDeCriacao" type="java.lang.String" column="dataDeCriacao"/>
+    <many-to-one name="Professor" entity-name="formulario.salaAula.logic.Professor" cascade="none" foreign-key="codigoProfessor_FK" not-null="false" column="codigoProfessor_FK"/>
+    <many-to-one name="Disciplina" entity-name="formulario.salaAula.logic.Disciplina" cascade="none" foreign-key="codigoDisciplina_FK" not-null="false" column="codigoDisciplina_FK"/>
+    <many-to-one name="horario1" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario1_FK" not-null="false" column="codigoHorario1_FK"/>    
+    <many-to-one name="horario2" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario2_FK" not-null="false" column="codigoHorario2_FK"/>    
+    <many-to-one name="horario3" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario3_FK" not-null="false" column="codigoHorario3_FK"/>    
+  </class>
+  </hibernate-mapping>

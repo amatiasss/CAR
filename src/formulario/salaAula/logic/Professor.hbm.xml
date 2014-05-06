@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping   package="formulario.salaAula.logic">
+  <class name="Professor" table="Professor"   optimistic-lock="none">
+    <id name="codigoProfessor" type="java.lang.Long" unsaved-value="null" column="codigoProfessor">
+      <generator class="native"/>
+    </id>
+    <property name="nome" type="java.lang.String" column="nome"/>
+    <property name="email" type="java.lang.String" column="email"/>
+    <property name="ramal" type="java.lang.Integer" column="ramal"/>
+  </class>
+</hibernate-mapping>

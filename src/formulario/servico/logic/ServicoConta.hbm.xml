@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping   package="formulario.servico.logic">
+	<joined-subclass name="ServicoConta" extends="Servico">
+		<key column="numeroDocumento_FK_FK"  />
+		<property column="tipo" length="20" name="tipo" not-null="false" type="java.lang.String"/>
+		<property column="justificativa" length="10000" name="justificativa" not-null="false" type="java.lang.String"/>
+		<property column="conta" length="50" name="conta" not-null="false" type="java.lang.String"/>
+	</joined-subclass>
+</hibernate-mapping>

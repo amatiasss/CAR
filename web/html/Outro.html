@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="pt-br">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  <link rel="stylesheet" href="css/redmond/jquery-ui.custom.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.custom.min.js"></script>
+<title>Outros</title>
+<style>
+<!--
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt }
+-->
+</style>
+</head>
+
+<body>
+
+<center><h2><font face="Arial">Outros</font></h2></center>
+<p align="right">
+    <a onclick="abreJanela()"><font face="Arial" size="5" color="#0000FF"><u>Ajuda</u></font></a></p>
+<P><P><P style="margin-left: 0"><font size="3" face="Arial">Nesta página podem
+ser enviados comentários para o bloco REENGE.<br>
+Preencha de forma objetiva os campos abaixo. Após o preenchimento, clique em
+submeter para enviar seu comentário.</font><P>
+<p style="text-indent: 0; margin: 0">
+<b>
+<font size="3" face="Arial">Obs: os campos de cor <font color="#0000FF"> azul</font> são de preenchimento obrigatório.</font></b>
+<font size="3" face="Arial"><br>
+<b>O não preenchimento dos demais campos resultará em envio com aviso. Neste caso,  
+a avaliação da solicitação será prejudicada.</b></font></p>
+<script src="../js/outro.js">
+</script>
+<form name="outro" method="post" action="/appCentralAtendimentoReenge/solicitacaoOutro">
+<input type="hidden" name="operacao" value="enviarEmail"/>
+<TABLE WIDTH=577 BORDER=0 BORDERCOLOR="#ffffff" CELLPADDING=7 CELLSPACING=0 STYLE="page-break-before: always" height="118">
+	<TR VALIGN=TOP>
+		<TD WIDTH=137 HEIGHT=25>
+            <font face="Arial">
+            <font color="#0000FF">Nome</font><font id=msgNome color="FF0000"> </font>:</font>
+		</TD>
+		<TD WIDTH=375 height="25">
+            <font face="Arial">
+			<input type="text" size="50" name="nome" onblur="verificaObrigatorio(this, msgNome)">
+            </font>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=137 HEIGHT=25>
+            <font face="Arial">
+			<font color="#0000FF">E-mail para contato</font><font id=msgEmail color="FF0000"> </font>:</font>
+		</TD>
+		<TD WIDTH=375 height="25">
+            <font face="Arial">
+			<input type="text" size="50" name="email" onblur="verificaEmail()">
+            </font>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+        <td height="26" width="137">
+            <font face="Arial">
+			Ramal:</font>
+		</TD>
+		<TD WIDTH=375 height="26">
+            <font face="Arial">
+			<input type="text" size="20" name="ramal"><BR>
+            </font>
+		</TD>
+	</TR>
+</TABLE>
+<p align="left" style="text-indent: 1,25cm; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="left" style="text-indent: 0; margin: 0"><font color="#0000FF" face="Arial" size="3">Registre aqui seu comentário. Forneça informações
+que nos permitam identificar com clareza o objeto de seus comentários</font><font face="Arial" size="3"><font color="#FF0000" id=msgComentario> </font>:</font></p>
+<P CLASS="western" ALIGN=left STYLE="text-indent: 0; margin: 0">
+<font face="Arial">
+<textarea rows="10" cols="90" name="comentario" onblur="verificaObrigatorio(this, msgComentario)"></textarea> <br>
+</font>
+	<p align="center">
+    <font face="Arial">
+	<input type="submit" onClick="return preEnvio()" value="Submeter">
+	<input type="button" value="Cancelar" onClick="cancelar()"></font>
+<P CLASS="western" ALIGN=left STYLE="text-indent: 1,25cm; margin-bottom: 0; margin-top:0">
+</form>
+
+</body>
+
+</html>

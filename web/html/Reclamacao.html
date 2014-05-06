@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  <link rel="stylesheet" href="css/redmond/jquery-ui.custom.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.custom.min.js"></script>
+
+<title>Formulário de Reclamação</title>
+<style>
+<!--
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt }
+-->
+</style>
+</head>
+
+<body>
+
+<center><h2><font face="Arial">Reclamações sobre o Bloco REENGE</font></h2></center>
+<p align="right">
+    <a onclick="abreJanela()"><font face="Arial" size="5" color="#0000FF"><u>Ajuda</u></font></a></p>
+<P><P style="margin-left: 0"><font size="3" face="Arial">Nesta página podem
+ser enviadas reclamações sobre o bloco REENGE.<br>
+Preencha de forma objetiva os campos abaixo. Após o preenchimento, clique em
+submeter para enviar sua reclamação.</font>
+<p style="text-indent: 0; margin: 0">
+&nbsp;</p>
+<p style="text-indent: 0; margin: 0">
+<b>
+<font size="3" face="Arial">Obs: os campos de cor <font color="#0000FF"> azul</font> são de preenchimento obrigatório.</font></b>
+<font size="3" face="Arial"><br>
+<b>O não preenchimento dos demais campos resultará em envio com aviso. Neste caso,  
+a avaliação da solicitação será prejudicada.</b></font></p>
+<script src="../js/reclamacao.js">
+</script>
+<form name="reclamacao" method="post" action="/appCentralAtendimentoReenge/reclamacao">
+<input type="hidden" name="operacao" value="enviarEmail"/>
+<p style="text-indent: 1,25cm; margin-top: 0; margin-bottom: 0">&nbsp;</p><TABLE WIDTH=577 BORDER=0 BORDERCOLOR="#ffffff" CELLPADDING=7 CELLSPACING=0 STYLE="page-break-before: always" height="118">
+	<TR VALIGN=TOP>
+		<TD WIDTH=137 HEIGHT=25>
+            <font face="Arial">
+            <font color="#0000FF">Nome</font><font color="#FF0000" id=msgNome> </font>:</font>
+		</TD>
+		<TD WIDTH=375 height="25">
+            <font face="Arial">
+			<input type="text" size="50" name="nome" onblur="verificaObrigatorio(this, msgNome)">
+            </font>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=137 HEIGHT=25>
+            <font face="Arial">
+			<font color="#0000FF">E-mail para contato</font><font color="#FF0000" id=msgEmail> </font>:</font>
+		</TD>
+		<TD WIDTH=375 height="25">
+            <font face="Arial">
+			<input type="text" size="50" name="email" onblur="verificaEmail()">
+            </font>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+        <td height="26" width="137">
+            <font face="Arial">
+			Ramal:</font>
+		</TD>
+		<TD WIDTH=375 height="26">
+            <font face="Arial">
+			<input type="text" size="20" name="ramal"><BR>
+            </font>
+		</TD>
+	</TR>
+</TABLE>
+<p style="text-indent: 1,25cm; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="text-indent: 0; margin: 0" align="left"><font color="#0000FF" face="Arial">Marque
+o campo cuja reclamação você deseja fazer<font color="#FF0000" id=msgTipo> </font></font></p>
+<p style="line-height: 100%; text-indent: 0; margin-left: 0; margin-right: 0; margin-top: 5; margin-bottom: 5">
+    <font face="Arial">
+	<input type="radio" name="tipo" value="EQUIPAMENTO" onBlur="verificaSelecao()" onClick="desativaTipoOutro()">Equipamento</font><p style="line-height: 100%; text-indent: 0; margin-left: 0; margin-right: 0; margin-top: 5; margin-bottom: 5">
+    <font face="Arial">
+	<input type="radio" name="tipo" value="REDE"  onBlur="verificaSelecao()" onClick="desativaTipoOutro()">Rede</font><p style="line-height: 100%; text-indent: 0; margin-left: 0; margin-right: 0; margin-top: 5; margin-bottom: 5">
+    <font face="Arial">
+	<input type="radio" name="tipo" value="PESSOAL_DE_APOIO" onBlur="verificaSelecao()" onClick="desativaTipoOutro()">Pessoal de apoio</font><p style="line-height: 100%; text-indent: 0; margin-left: 0; margin-right: 0; margin-top: 5; margin-bottom: 5">
+    <font face="Arial">
+	<input type="radio" name="tipo" value="OUTROS" onBlur="verificaSelecao()" onClick="verificaTipoOutro()">Outros <input type = "text" name = "tipoDeOutro" size = "11" onClick="ativaOpcao()"> </font><p style="margin-left: 0">
+<font face="Arial">
+<font color="#0000FF">
+Como forma de auxiliar nossa equipe, descreva <B>precisamente </B>qual
+o problema identificado.<font color="#FF0000" id=msgDescricao> </font></P></font></font>
+
+<p align="left" style="text-indent: 00; margin: 0">
+<font face="Arial">
+<textarea rows="10" cols="78" name="descricao" onblur="verificaObrigatorio(this, msgDescricao)"></textarea> </font> </p>
+
+<p align="left" style="text-indent: 0; margin: 0">
+&nbsp; </p>
+
+<p align="left" style="text-indent: 0; margin-left: 40; margin-right: 0; margin-top: 0; margin-bottom: 0">
+&nbsp; </p>
+	<p align="center">
+    <font face="Arial">
+	<input type="submit" onClick="return preEnvio()" value="Submeter">
+	<input type="button" value="Cancelar" onClick="cancelar()"></font>
+</form>
+
+</body>
+
+</html>

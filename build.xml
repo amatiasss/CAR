@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project default="build" basedir=".">
+
+<property file="build.properties"/>
+
+	<property name="app.id" value="appCentralAtendimentoReenge"/>
+	<property name="app.name" value="${app.id}"/>
+	<property name="app.version" value="1.0"/>
+	<property name="dist.base" value="WAR"/>
+	<property name="dist.home" value="${dist.base}"/>
+	<property name="build.base" value="build"/>
+	<property name="build.home" value="${build.base}/${app.id}"/>
+	<property name="build.webinf" value="${build.home}/WEB-INF"/>
+	<property name="build.lib" value="${build.webinf}/lib"/>
+	<property name="build.classes" value="${build.webinf}/classes"/>
+	<property name="home.conf" value="conf"/>
+	<property name="home.web" value="web"/>
+	<property name="home.lib" value="lib"/>
+	<property name="home.src" value="src" />
+	<property name="home.javadocs" value="javadocs"/>
+	<!--  controle de compilacao  -->
+	<property name="compile.debug" value="true"/>
+	<property name="compile.deprecation" value="true"/>
+	<property name="compile.optimize" value="true"/>
+	<property name="packagenames" value="*.*"/>
+	<property name="warfile" value="${app.id}.war"/>
+
+    <target name="targets" description="Prints available the targets">
+        <echo>
+        -----------------------------------------------------------
+        ANT build - ${app.id} ${app.version}
+        -----------------------------------------------------------
+
+        The following targets are available:
+
+            build    Builds the project
+            dist     Creates the project WAR file to distribute the
+                     project
+            clean    Cleans the build and distribution directories
+            all      Cleans and builds all the packages and examples
+            javadoc  Builds the full JavaDocs
+
+            reload   reload the "${app.id}" context from Tomcat
+
+            targets  Lists the build targets
+            start    Creates the project, all directories and etc.
+                     This must be used only once, to create the
+                     project directory structure
+        -----------------------------------------------------------
+        </echo>
+    </target>
+
+
+<!-- Classpath -->
+	<path id="compile.classpath">
+		<fileset dir="${home.lib}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement location="${build.classes}"/>
+	</path>
+
+
+<!-- CREATE PROJECT -->
+
+	<target name="start" depends="prepare,cvsignore"/>
+<!-- PREPARE  -->
+	<target name="prepare">
+		<mkdir dir="${build.home}"/>
+		<mkdir dir="${build.lib}"/>
+		<mkdir dir="${build.classes}"/>
+		
+		<mkdir dir="${home.conf}"/>
+		<mkdir dir="${home.web}"/>
+		<mkdir dir="${home.lib}"/>
+		<mkdir dir="${home.src}"/>
+		<mkdir dir="${home.javadocs}"/>
+		<!--<mkdir dir="${home.testReport}"/>-->
+
+
+		<copy todir="${build.lib}">
+			<fileset dir="${home.lib}">
+				<exclude name="junit.jar"/>
+				<exclude name="servlet.jar"/>
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.webinf}">
+			<fileset dir="${home.conf}">
+				<include name="*.tld"/>
+				<include name="*.properties"/>
+				<include name="*.conf"/>
+				<include name="*.xml"/>
+				<include name="*.script"/>
+			</fileset>
+		</copy>
+	</target>
+
+<!-- COPYWEB -->
+	<target name="copyWeb" depends="prepare">
+		<copy todir="${build.home}">
+			<fileset dir="${home.web}">
+				<exclude name="WEB-INF"/>
+			</fileset>
+		</copy>
+	</target>
+
+<!-- ALL -->
+	<target name="all" depends="clean,copyWeb,build" description="Clean build and dist, then build"/>
+
+<!-- CLEAN -->
+	<target name="clean" description="Delete old build and dist directories">
+		<delete dir="${build.home}"/>
+		<delete dir="${dist.home}"/>
+		<delete dir="${home.javadocs}" />
+	</target>
+	
+<!-- COMPILE -->
+	<target name="build" depends="copyWeb" description="Compile Java sources">
+		<!-- Compile Java classes as necessary -->
+		<javac srcdir="${home.src}" destdir="${build.classes}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+
+<!-- JAVADOC -->
+    <target name="javadocs" depends="prepare" description="Build the full javadocs">
+    		<echo> Gerando documentação javadoc... </echo>    
+    		<mkdir dir="${dist.base}/javadocs/api"/>
+        <javadoc sourcepath="${home.src}"
+        	destdir= "${home.javadocs}/api"
+        	doctitle="${app.name} JavaDoc"
+        	windowtitle="${app.name} JavaDoc"
+        	package="true"
+        	author="true"
+        	version="true"
+        	noindex="true"
+        	packagenames="${packagenames}">
+      			<classpath refid="compile.classpath"/>
+      	</javadoc>
+    </target>
+<!-- DISTRIBUTION -->
+
+	<target name="war" depends="copyWeb,build" description="Create binary distribution">
+		<mkdir dir="${dist.home}"/>
+		<jar jarfile="${dist.home}/${warfile}" basedir="${build.home}"/>
+	</target>
+
+
+<!-- CVSIGNORE -->
+
+	<target name="cvsignore">
+		<echo file=".cvsignore" append="no">build
+dist
+bak
+lib
+bin
+.cvspass
+.nbattrs
+build.properties
+library.library
+.classpath
+.project
+*.html
+*.jpx*
+*.jpx.*
+*.jcp
+*.jcw
+*.zip
+*.jar
+class*</echo>
+		<echo file="${home.conf}/.cvsignore" append="no">database.properties</echo>
+		<echo file="${home.docs}/.cvsignore" append="no">api</echo>
+	</target>
+
+
+</project>

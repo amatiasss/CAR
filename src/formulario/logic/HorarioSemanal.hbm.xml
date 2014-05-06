@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping schema="cardb"  package="formulario.logic">
+  <class name="HorarioSemanal" table="horariosemanal" schema="cardb"  optimistic-lock="none">
+    <id name="codigoHorario" type="java.lang.Long" unsaved-value="null" column="codigoHorario">
+      <generator class="native"/>
+    </id>
+    <property name="dia" type="java.lang.String" column="dia"/>
+    <property name="inicio" type="java.lang.String" column="inicio"/>
+    <property name="fim" type="java.lang.String" column="fim"/>
+  </class>
+</hibernate-mapping>

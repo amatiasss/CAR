@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+  <link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script>
+	$(document).ready(function() {
+	  $("a").click(function(){
+		$("p").removeClass("current");
+		$(this).parent().addClass("current");
+	  });
+	});
+  </script>
+</head>
+
+<body id="menu">
+	<p id="title">Solicite</p>
+	<p class="current"><a href="apresentacao.html" target="view">Apresentação</a></p>
+	<p><a href="cadastroEmails/administracao.jsp">Administra&ccedil;&atilde;o</a></p>
+	<p><a href="SolicitacaoSalaAula.html" target="view">Solicita&ccedil;&atilde;o de Sala</a></p>
+	<p><a href="SolicitacaoLaboratorio.html" target="view">Solicita&ccedil;&atilde;o de Laborat&oacute;rio</a></p>
+	<span>Demais Servi&ccedil;os:</span><br/><br/>
+	<p><a href="Reclamacao.html" target="view">Registrar reclamação</a></p>
+	<p><a href="Servico.html" target="view">Solicitar serviço</a></p>
+	<p><a href="Sugestao.html" target="view">Apresentar sugestão</a></p>
+	<p><a href="Outro.html" target="view">Outro</a></p>
+	<p>&nbsp;</p>
+</body>
+
+</html>

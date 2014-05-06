@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  schema="cardb" package="formulario.laboratorio.logic">
+  <class name="FormularioLaboratorio" table="formularioLaboratorio" schema="cardb"  optimistic-lock="none">
+	<id name="codigoSolab" type="java.lang.Long" unsaved-value="null" column="codigoSolab">
+      <generator class="native"/>
+    </id>
+	<property name="numeroMaquinas" type="int" column="numeroMaquinas"/>
+    <property name="cursoPodeSerNoturno" type="java.lang.String" column="cursoPodeSerNoturno"/>
+    <property name="justificativaNoturno" type="java.lang.String" column="justificativaNoturno"/>
+    <property name="cursoPodeSerNoSabado" type="java.lang.String" column="cursoPodeSerNoSabado"/>
+    <property name="justificativaSabado" type="java.lang.String" column="justificativaSabado"/>
+    <property name="turnoSabado" type="java.lang.String" column="turnoSabado"/>
+    <property name="contribuicao" type="java.lang.String" column="contribuicao"/>
+    <property name="dataDeCriacao" type="java.lang.String" column="dataDeCriacao"/>
+    <many-to-one name="ministrante" entity-name="formulario.laboratorio.logic.Ministrante" cascade="none" foreign-key="codigoMinistrante_FK" not-null="false" column="codigoMinistrante_FK"/>
+    <many-to-one name="curso" entity-name="formulario.laboratorio.logic.Curso" cascade="none" foreign-key="codigoCurso_FK" not-null="false" column="codigoCurso_FK"/>
+    <many-to-one name="horario1" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario1_FK" not-null="false" column="codigoHorario1_FK"/>    
+    <many-to-one name="horario2" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario2_FK" not-null="false" column="codigoHorario2_FK"/>    
+    <many-to-one name="horario3" entity-name="formulario.logic.HorarioSemanal" cascade="none" foreign-key="codigoHorario3_FK" not-null="false" column="codigoHorario3_FK"/>        
+  </class>
+</hibernate-mapping>

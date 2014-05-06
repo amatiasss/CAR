@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_4.xsd"
+       version="2.4">
+
+  <display-name>CentralAtendimentoReenge</display-name>  
+  
+  <servlet>
+    <servlet-name>CorreioServlet</servlet-name>
+    <servlet-class>correio.controller.CorreioServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CorreioServlet</servlet-name>
+    <url-pattern>/atendimentoReenge</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdministradorServlets</servlet-name>
+    <servlet-class>car.administracao.controller.AdministradorServlets</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdministradorServlets</servlet-name>
+    <url-pattern>/cadastroAdministrador</url-pattern>
+  </servlet-mapping>
+ 
+  <taglib>
+    <taglib-uri>/tags/core</taglib-uri>
+    <taglib-location>/WEB-INF/c.tld</taglib-location>
+  </taglib>
+</web-app>

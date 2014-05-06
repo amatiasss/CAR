@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_03" class="java.beans.XMLDecoder"> 
+ <object class="java.util.TreeSet"> 
+  <void method="add"> 
+   <string>romengo@gmail.com</string> 
+  </void> 
+  <void method="add"> 
+   <string>hamonbarros@gmail.com</string> 
+  </void> 
+ </object> 
+</java> 

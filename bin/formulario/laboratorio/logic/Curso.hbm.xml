@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping schema="cardb" package="formulario.laboratorio.logic">
+  <class name="Curso" table="curso" schema="cardb" optimistic-lock="none">
+    <id name="codigoCurso" type="java.lang.Long" unsaved-value="null" column="codigoCurso">
+      <generator class="native"/>
+    </id>
+    <property name="duracaoCurso" type="java.lang.String" column="duracaoCurso"/>
+    <property name="cursoPertence" type="java.lang.String" column="cursoPertence"/>
+    <property name="numeroAlunos" type="java.lang.String" column="numeroAlunos"/>
+    <property name="nomeCurso" type="java.lang.String" column="nomeCurso"/>
+    <property name="cursoPago" type="java.lang.String" column="cursoPago"/>
+    <property name="softwareNecessario" type="java.lang.String" column="softwareNecessario"/>
+    <property name="publicoAlvo" type="java.lang.String" column="publicoAlvo"/>
+    <property name="finalidade" type="java.lang.String" column="finalidade"/>
+  </class>
+</hibernate-mapping>

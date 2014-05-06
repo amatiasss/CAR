@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping   package="auto_Atendimento.logic">
+	<joined-subclass name="Sugestao" extends="AutoAtendimento">
+		<key column="numeroDocumento_FK"  />
+		<property column="sugestao"	length="1000" name="sugestao" not-null="false" type="java.lang.String"/>
+	</joined-subclass>
+</hibernate-mapping>

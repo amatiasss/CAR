@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  schema="cardb" package="formulario.laboratorio.logic">
+  <class name="Ministrante" table="ministrante" schema="cardb"  optimistic-lock="none">
+    <id name="codigoMinistrante" type="java.lang.Long" unsaved-value="null" column="codigoMinistrante">
+      <generator class="native"/>
+    </id>
+    <property name="nome" type="java.lang.String" column="nome"/>
+    <property name="email" type="java.lang.String" column="email"/>
+  </class>
+</hibernate-mapping>

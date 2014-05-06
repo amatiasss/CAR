@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<java version="1.5.0_01" class="java.beans.XMLDecoder"> 
+ <object class="formulario.logic.email.CadastroEmail"> 
+  <void property="laboratorio"> 
+   <void method="put"> 
+    <string>Hamon</string>
+    <string>hamonbarros@gmail.com</string>
+   </void>
+   <void method="put">
+    <string>Rômulo</string>
+    <string>romulocalado@gmail.com</string>
+   </void>
+  </void>
+  <void property="outro"> 
+   <void method="put"> 
+    <string>Hamon</string> 
+    <string>hamonbarros@gmail.com</string> 
+   </void>
+   <void method="put">
+    <string>Rômulo</string>
+    <string>romulocalado@gmail.com</string>
+   </void>
+  </void> 
+  <void property="reclamacao"> 
+   <void method="put"> 
+    <string>Hamon</string> 
+    <string>hamonbarros@gmail.com</string> 
+   </void> 
+   <void method="put"> 
+    <string>Rodrigo</string> 
+    <string>romengo@gmail.com</string> 
+   </void> 
+  </void> 
+  <void property="sala"> 
+   <void method="put"> 
+    <string>Hamon</string> 
+    <string>hamonbarros@gmail.com</string> 
+   </void> 
+   <void method="put">
+    <string>Rômulo</string>
+    <string>romulocalado@gmail.com</string>
+   </void>
+  </void> 
+  <void property="servico"> 
+   <void method="put"> 
+    <string>Hamon</string> 
+    <string>hamonbarros@gmail.com</string> 
+   </void> 
+   <void method="put">
+    <string>Rômulo</string>
+    <string>romulocalado@gmail.com</string>
+   </void>
+  </void> 
+  <void property="sugestao"> 
+   <void method="put"> 
+    <string>Hamon</string> 
+    <string>hamonbarros@gmail.com</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

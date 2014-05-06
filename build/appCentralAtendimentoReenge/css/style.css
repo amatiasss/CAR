@@ -1,0 +1,102 @@
+html
+{
+    width: 1000px;
+    margin: 50px auto;
+	border-radius: 20px 0 20px 20px;
+}
+
+.index{
+  background: url("../img/text4.jpg");
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  font-family: fantasy;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+iframe#menu{
+  -webkit-border-radius: 20px 0px 20px 20px;
+  -moz-border-radius: 20px 0px 20px 20px;
+  -webkit-box-shadow: -2px 0 10px #0266B3;
+  -moz-box-shadow: -2px 0 10px #0266B3;
+  box-shadow: -2px 0 10px #0266B3;
+  
+  background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(left, #1e5799 25%, #2989d8 77%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(25%,#1e5799), color-stop(77%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #1e5799 25%,#2989d8 77%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #1e5799 25%,#2989d8 77%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #1e5799 25%,#2989d8 77%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to right, #1e5799 25%,#2989d8 77%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+}
+
+iframe#view{
+  -webkit-border-radius: 20px 0px 20px 20px;
+    -moz-border-radius: 20px 0px 20px 20px;
+    -webkit-box-shadow: 4px 0 6px;
+    -moz-box-shadow: 4px 0 6px;
+    box-shadow: 4px 0 6px;
+}
+
+#main{
+  margin: 0px auto 20px auto;
+  width: 1000px;
+  height: auto;
+}
+
+#menu {
+	width: 200px;
+	height: 800px;
+	float: left;
+	padding: 0;
+	font-size: 15px;
+	text-align: right;
+	text-shadow: 1px 1px #AAA;
+	overflow: hidden;
+	border-radius: 20px 0 20px 20px;
+}
+
+#menu a{
+	color: #FFF;
+	text-decoration: none;
+}
+#menu p{
+  padding: 8px 10px 8px 0; 
+  margin: 0 0 0 10px;
+}
+
+#menu p.current a{
+	color: #0266B3;
+}
+
+#menu p.current {
+	background: url("../img/papel.jpg") repeat;
+	border-radius: 10px 0 0 10px;
+}
+
+#menu a:hover{
+  color: #00BFFF;
+  text-shadow: 0px 0px #FFF;
+}
+
+#title {
+	text-align: center;
+  font-size: 250%;
+}
+
+#view {
+ width: 780px;
+ height: 800px;
+ background: url("../img/papel.jpg") repeat;
+ overflow: visible;
+ border-radius: 0px 20px 20px 20px;
+}

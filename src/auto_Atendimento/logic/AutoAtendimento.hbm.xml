@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping   package="auto_Atendimento.logic">
+  <class name="AutoAtendimento" table="auto_atendimento">
+    <id name="numeroDocumento" type="java.lang.Long" unsaved-value="null" column="numeroDocumento">
+      <generator class="native"/>
+    </id>
+    <property name="dataSemanal" type="java.lang.String" column="dataSemanal"/>
+    <many-to-one name="usuario" entity-name="usuario.logic.Usuario" cascade="none" foreign-key="codigoUsuario_FK" column="codigoUsuario_FK"/>
+  </class>
+</hibernate-mapping>

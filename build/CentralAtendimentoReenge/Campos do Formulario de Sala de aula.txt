@@ -1,0 +1,24 @@
+Lista de campos do formulário de solicitação de sala:
+nomeDisciplina					ok
+periodo					ok
+nomeProfessor 					ok 
+ramal 						ok 
+email 						ok 
+NumeroAlunos					ok
+cursosPertence					ok
+horarioDisciplina				ok
+salaAtual					ok
+opcaoPeriodicidade + periodicidade		ok
+equipamentosFrequentes				ok
+equipamentosIndispensaveis			ok
+linkMaterial					ok
+material					ok
+equipamentosNaoDisponiveis			ok
+equipamentosNaoUtilizados			ok
+discplinaNoturna				ok
+justificativaNoturna				ok
+disciplinaSabado				ok
+turnoSabado					ok
+justificativaSabado				ok
+contribuicao					ok
+turnoSabado					ok

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping schema="cardb"  package="formulario.salaAula.logic">
+  <class name="Disciplina" table="disciplina" schema="cardb" optimistic-lock="none">
+    <id name="codigoDisciplina" type="java.lang.Long" unsaved-value="null" column="codigoDisciplina">
+      <generator class="native"/>
+    </id>
+    <property name="disciplina" type="java.lang.String" column="disciplina"/>
+    <property name="curso" type="java.lang.String" column="curso"/>
+    <property name="periodicidade" type="java.lang.String" column="periodicidade"/>
+    <property name="totalAlunos" type="java.lang.String" column="totalAlunos"/>
+    <property name="salaAtual" type="java.lang.String" column="salaAtual"/>
+    <property name="linkMaterial" type="java.lang.String" column="linkMaterial"/>
+    <property name="periodo" type="java.lang.String" column="periodo"/>
+    <property name="material" type="java.io.File" column="material"/>
+  </class>
+</hibernate-mapping>
